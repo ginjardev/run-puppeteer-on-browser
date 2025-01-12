@@ -1,7 +1,7 @@
 'use strict';
 import { connect } from 'puppeteer';
 
-(async () => {
+export async function remoteBrowserPage() {
     const capabilities = {
         'browserName': 'Chrome',
         'browserVersion': 'latest',
@@ -17,29 +17,20 @@ import { connect } from 'puppeteer';
     };
 
     let browser;
+    let page;
+
     try {
         browser = await connect({
             browserWSEndpoint:
                 `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`,
         });
 
-        const page = await browser.newPage();
+        page = await browser.newPage();
         await page.setViewport({
             width: 1024,
             height: 768,
             deviceScaleFactor: 1,
         });
-        console.log("Navigating to LambdaTest");
-        await page.goto('https://www.lambdatest.com/');
-        console.log("Navigating to Pricing");
-        await page.goto('https://www.lambdatest.com/pricing');
-        console.log("Navigating to Automation");
-        await page.goto('https://www.lambdatest.com/automation-testing');
-
-        await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`)
-
-        console.log("Closing browser");
-        await browser.close();
 
     } catch (e) {
         if (browser) {
@@ -49,4 +40,5 @@ import { connect } from 'puppeteer';
         }
         console.log("Error - ", e);
     }
-})();
+    return {page, browser};
+}
