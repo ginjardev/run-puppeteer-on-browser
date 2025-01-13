@@ -18,6 +18,7 @@ Step 2: Install the npm dependencies.
 ```
 ### Authentication
 Step 3: In order to run your Puppeteer on LambdaTest cloud you will need to set your LambdaTest username and access key in the environment variables. Click the Access Key button at the top-right of the Automation Dashboard to access it.
+
 ![access_key](./access_key_username.png)
 
 **Windows**
