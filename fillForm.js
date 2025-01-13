@@ -29,6 +29,9 @@ import { remoteBrowserPage } from "./connector.js";
 
   console.log('Form submitted');
 
+  // set test status to passed
+  await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`);
+
   await browser.close();
 
   console.log("closing browser");

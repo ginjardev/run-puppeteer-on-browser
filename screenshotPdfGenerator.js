@@ -16,6 +16,9 @@ import { remoteBrowserPage } from "./connector.js";
     await page.pdf({ path: 'lambdatest.pdf' });
     console.log('PDF generated!')
 
+    // set test status to passed
+    await page.evaluate(_ => { }, `lambdatest_action: ${JSON.stringify({ action: 'setTestStatus', arguments: { status: 'passed', remark: "Test Passed" } })}`);
+
     await browser.close();
 
     console.log('Browser closed.');
