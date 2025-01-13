@@ -42,5 +42,6 @@ Use the following command:
 The LambdaTest Automation Dashboard is where you can see the results of your executed Puppeteer scripts on the LambdaTest platform.
 
 The below screenshot of LambdaTest Automation Dashboard shows the Puppeteer build on the left and the build sessions associated with the selected build on the right.
+
 ![results](./lambdatest_result.png)
 
