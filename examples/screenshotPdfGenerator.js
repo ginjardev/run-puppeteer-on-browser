@@ -9,11 +9,11 @@ import { remoteBrowserPage } from "./connector.js";
     await page.goto('https://www.lambdatest.com');
 
     // Take screenshot
-    await page.screenshot({ path: 'lambdatest.png' });
+    await page.screenshot({ path: '../lambdatest.png' });
     console.log('Screenshot taken!')
 
     // Generate PDF
-    await page.pdf({ path: 'lambdatest.pdf' });
+    await page.pdf({ path: '../lambdatest.pdf' });
     console.log('PDF generated!')
 
     // set test status to passed
