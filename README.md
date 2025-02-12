@@ -36,7 +36,7 @@ Step 3: In order to run your Puppeteer on LambdaTest cloud you will need to set 
 To the Puppeteer scripts in this repository on LambdaTest cloud plaform. 
 Use the following command:
 ```
-    node webScraper.js && node fillForm.js && node screenshotPdfGenerator.js
+    node examples/webScraper.js && node examples/fillForm.js && node examples/screenshotPdfGenerator.js
 ```
 ### View your Puppeteer results
 The LambdaTest Automation Dashboard is where you can see the results of your executed Puppeteer scripts on the LambdaTest platform.
